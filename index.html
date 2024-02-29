@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
 </head>
+
 <body>
 
     <header>
-        <h1>
-            Calculadora IMC - Indice de Massa Corporal
-        </h1>
+        <div class="headerdisposition">
+            <h1>
+                Calculadora IMC - Indice de Massa Corporal
+            </h1>
 
-        <button><a href="https://www.google.com/?hl=pt-BR">Sair</a></button>
+            <button>
+                <a href="https://www.google.com/?hl=pt-BR">
+                    Sair
+                </a>
+            </button>
+        </div>
+
     </header>
 
 
-        <form action="">
-            <label for="altura"> Altura: </label>
-            <input type="number" name="" id="altura">
-            <br>
+    <form action="">
+        <label for="altura"> Altura: </label>
+        <input type="number" name="" id="altura">
+        <br>
 
-            <label for="peso"> Peso (Kg) </label>
-            <input type="number" name="" id="peso" maxlength="5">
-            <br>
+        <label for="peso"> Peso (Kg) </label>
+        <input type="number" name="" id="peso" maxlength="5">
+        <br>
 
-            <button onclick="calcularImc()"> Calcular IMC</button>
-            <br>
+        <button onclick="calcularImc()"> Calcular</button>
+        <br>
 
-            <p>Seu indeice de massa corporal é: <span  id="resultado"></span> 
-            <span id="saude"></span></p>
-        </form>
+        <p>Seu indice de massa corporal é: <span id="resultado"></span>
+            <span id="saude"></span>
+        </p>
+    </form>
 
-        <script>
-            function calcularImc(){
-                const peso = document.getElementById('peso').value;
-                const altura = document.getElementById('altura').value;
-                const imc = peso / (altura ** 2);
-                document.getElementById('resultado').textContent = imc.toFixed(2);
-                if( imc < 18.50 ){
-                    document.getElementById('saude').textContent = '= Peso baixo';
-                } else if (document.getElementById('saude').textContent = '= Peso normal'){
+    <script>
 
-                } else imc > 25 ;
-                document.getElementById('saude').textContent = '= Sobrepeso ou obesidadde'
+        function calcularImc() {
+            const peso = document.getElementById('peso').value;
+            const altura = document.getElementById('altura').value;
+            const imc = peso / (altura ** 2);
+            document.getElementById('resultado').textContent = imc.toFixed(2);
+            if (imc < 18.50) {
+                document.getElementById('saude').textContent = '= Peso baixo'
+            } else if (imc < 24.90) {
+                document.getElementById('saude').textContent = '= Peso normal'
+            } else {
+                document.getElementById('saude').textContent = 'Sobrepeso ou obesidade'
             }
-        </script>
-    
+        }
+
+    </script>
+
 </body>
+
 </html>
